@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+    <mat-label>Select Season</mat-label>
+    <mat-select (selectionChange)="onSelectionChange($event)" [(value)]="defaultValue">
+        <mat-option *ngFor="let season of seasons" [value]="season.value">
+            {{season.viewValue}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

@@ -1,0 +1,22 @@
+<div fxFill fxLayout="column">
+  <div style="background-color:#CFE2F3;" fxFlex="10%" fxLayout="row" fxLayoutAlign="space-between center">
+    <span>My Project</span>
+    <app-header (onSeasonChange)=onSeasonChange($event) [defaultValue]=selectedSeason></app-header>
+  </div>
+  <div fxFlex="90%" fxLayout="row">
+    <div style="background-color:#E7E7E7;" fxFlex="15%">
+      <app-side-menu (onMenuChange)=onMenuChange($event)></app-side-menu>
+    </div>
+    <div fxFlex="85%">
+      <mat-tab-group>
+        <mat-tab label="Table">
+          <app-table [data]="data"></app-table>
+        </mat-tab>
+        <mat-tab label="Chart">
+          <app-chart [data]="data"></app-chart>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+  

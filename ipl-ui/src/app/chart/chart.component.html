@@ -1,0 +1,18 @@
+<div fxFill fxLayout="column">
+  <div fxFlex="80px" style="background-color:#CFE2F3;" fxLayout="row" fxLayoutAlign="end center">
+    <mat-form-field appearance="fill">
+      <mat-label>Chart Select</mat-label>
+      <mat-select (selectionChange)="chartType = $event.value">
+        <mat-option *ngFor="let chart of charts" [value]="chart.value">
+          {{chart.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div *ngIf="(chartType =='bar')">
+    <app-barchart [data]="displayedColumns"></app-barchart>
+  </div>
+  <div *ngIf="(chartType =='pie')">
+    <app-piechart *ngIf="displayedColumns" [data]="displayedColumns"></app-piechart>
+  </div>
+</div>

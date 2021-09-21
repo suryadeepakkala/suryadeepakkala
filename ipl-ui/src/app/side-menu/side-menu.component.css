@@ -1,0 +1,11 @@
+.odd{
+    text-decoration: solid;
+}
+
+.even{
+    background-color: blue;
+}
+
+.evenClass{
+    font-weight: bold;
+}
